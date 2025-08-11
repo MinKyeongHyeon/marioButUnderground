@@ -1,0 +1,41 @@
+@import "./variables";
+
+.platform {
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    $platform-color,
+    darken($platform-color, 20%)
+  );
+  border: 2px solid darken($platform-color, 30%);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  // 텍스처 효과
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.1) 4px,
+      rgba(255, 255, 255, 0.1) 8px
+    );
+    border-radius: 2px;
+  }
+
+  // 지면 스타일
+  &.ground {
+    background: linear-gradient(
+      to bottom,
+      $ground-color,
+      darken($ground-color, 20%)
+    );
+    border-color: darken($ground-color, 30%);
+  }
+}

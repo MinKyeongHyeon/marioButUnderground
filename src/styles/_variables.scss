@@ -1,0 +1,29 @@
+// 전역 변수들
+$primary-color: #ff6b35;
+$secondary-color: #f7931e;
+$accent-color: #fff75e;
+$background-color: #87ceeb;
+$ground-color: #8b4513;
+$platform-color: #228b22;
+
+// 믹스인
+@mixin button-style {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// 반응형 브레이크포인트
+$mobile: 768px;

@@ -1,0 +1,174 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow-x: hidden;
+}
+
+.main-content {
+  padding: 30px;
+  height: calc(100vh * 2 / 3); /* 상단 2/3 영역 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow-y: auto;
+}
+
+.main-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.main-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.game-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 700px;
+  width: 100%;
+  display: grid;
+  gap: 25px;
+}
+
+.browser-info {
+  text-align: center;
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #fff75e;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    font-style: italic;
+  }
+}
+
+.game-controls {
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #fff75e;
+  }
+}
+
+.controls-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 8px;
+
+  .key {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  .action {
+    font-size: 1rem;
+  }
+}
+
+.game-objective {
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #fff75e;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+
+    li {
+      padding: 8px 0;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "🎮";
+        position: absolute;
+        left: 0;
+        top: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+    height: calc(100vh * 2 / 3);
+  }
+
+  .main-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+  }
+
+  .game-info {
+    margin: 0 10px;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .browser-info h2,
+  .game-controls h2,
+  .game-objective h2 {
+    font-size: 1.2rem;
+  }
+
+  .control-item {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+
+    .key {
+      font-size: 0.8rem;
+    }
+
+    .action {
+      font-size: 0.9rem;
+    }
+  }
+
+  .game-objective li {
+    font-size: 0.9rem;
+  }
+}

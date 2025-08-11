@@ -1,0 +1,36 @@
+@import "./variables";
+
+.player {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  z-index: 10;
+  transition: none; // 부드러운 움직임 방지
+
+  // 픽셀 퍼펙트를 위한 설정
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+
+  // 그림자 효과
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+
+  // 점프할 때 애니메이션
+  &.jumping {
+    animation: bounce 0.3s ease-out;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.2) scaleX(0.8);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
